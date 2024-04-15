@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Ställ en AI fråga till Chatboten";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Ask" method="post">
+    <div class="form-group">
+        <label for="question">Din fråga</label>
+        <input type="text" class="form-control" id="question" name="question" placeholder="Skriv din fråga här...">
+    </div>
+    <button type="submit" class="btn btn-primary">Fråga</button>
+</form>
+
+@if (ViewBag.Answer != null)
+{
+    <div class="alert alert-info" role="alert">
+        @ViewBag.Answer
+    </div>
+}
